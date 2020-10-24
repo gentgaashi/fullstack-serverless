@@ -521,7 +521,7 @@ class ServerlessFullstackPlugin {
     }
 
     getBucketName(bucketName) {
-        const stageBucketName = `${this.serverless.service.service}-${this.getStage()}-${bucketName}`;
+        const stageBucketName = `${bucketName}`;
         return stageBucketName;
     }
 
