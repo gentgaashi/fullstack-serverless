@@ -12,16 +12,15 @@ Resources:
   WebAppS3BucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
-      Bucket: WebAppS3BucketName
+      Bucket: frontend-platform-staging-staging-frontend-platform-code-bucket
       PolicyDocument:
         Statement:
-          - Sid: AllowPublicRead
+          - Sid: PublicRead
             Effect: Allow
-            Principal:
-              AWS: '*'
+            Principal: "*"
             Action:
-            - s3:GetObject
-            - s3:GetObjectVersion
+              - s3:GetObject
+              - s3:GetObjectVersion
             Resource:
               Fn::Join:
               - ''
