@@ -12,7 +12,7 @@ Resources:
   WebAppS3BucketPolicy:
     Type: AWS::S3::BucketPolicy
     Properties:
-      Bucket: frontend-platform-staging-staging-frontend-platform-code-bucket
+      Bucket: WebAppS3BucketName
       PolicyDocument:
         Statement:
           - Sid: PublicRead
