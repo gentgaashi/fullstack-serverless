@@ -345,7 +345,15 @@ class ServerlessFullstackPlugin {
         this.prepareS3(resources.Resources);
         this.prepareMinimumProtocolVersion(distributionConfig);
         this.prepareCompressWebContent(distributionConfig);
+        this.prepareResponseHeadersPolicyId(distributionConfig);
+    }
+    
+    prepareResponseHeadersPolicyId(distributionConfig) {
+        const responseHeadersPolicyId = this.getConfig('responseHeadersPolicyId', undefined);
 
+        if (responseHeadersPolicyId) {
+            distributionConfig.DefaultCacheBehavior.ResponseHeadersPolicyId = responseHeadersPolicyId;        
+        }
     }
 
     prepareLogging(distributionConfig) {
