@@ -86,6 +86,7 @@ class ServerlessFullstackPlugin {
                             this.serverless.cli.log(`Bucket does not exist`);
                         }
                     });
+                    
                 }
                 this.serverless.cli.log('Bucket not removed');
                 return BbPromise.resolve();
